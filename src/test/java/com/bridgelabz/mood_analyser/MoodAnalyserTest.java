@@ -15,22 +15,22 @@ public class MoodAnalyserTest
     @Test
     public void testMoodAnalysis()throws Exception 
     {
-    	MoodAnalyser  moodAnalyser = new MoodAnalyser();
-    	String mood = moodAnalyser.analyseMood("This is a sad message ");
+    	MoodAnalyser  moodAnalyser = new MoodAnalyser("This is a sad message");
+    	String mood = moodAnalyser.analyseMood();
     	Assert.assertThat(mood, CoreMatchers.is("SAD"));
     }
     
     @Test
     public void happyMood() throws Exception {
-    	MoodAnalyser  moodAnalyser = new MoodAnalyser();
-    	String mood = moodAnalyser.analyseMood("This is a happy message ");
+    	MoodAnalyser  moodAnalyser = new MoodAnalyser("This is a happy message ");
+    	String mood = moodAnalyser.analyseMood();
     	Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
 	}
     
     @Test
     public void anyMood() throws Exception {
-    	MoodAnalyser  moodAnalyser = new MoodAnalyser();
-    	String mood = moodAnalyser.analyseMood("I am in any mood ");
+    	MoodAnalyser  moodAnalyser = new MoodAnalyser("I am in any mood ");
+    	String mood = moodAnalyser.analyseMood();
     	Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
 	}
 }

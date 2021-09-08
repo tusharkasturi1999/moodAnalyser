@@ -6,12 +6,21 @@ package com.bridgelabz.mood_analyser;
  */
 public class MoodAnalyser {
 
-	//This method gives SAD or HAPPY mood
-	public String analyseMood(String message) {
+	String message;
+
+	public MoodAnalyser(String message) {
+
+		this.message = message;
+	}
+
+	public MoodAnalyser() {
+	}
+
+	// This method gives SAD or HAPPY mood
+	public String analyseMood() {
 		if (message.contains("sad")) {
 			return "SAD";
-		}
-		else {
+		} else {
 			return "HAPPY";
 		}
 	}
