@@ -17,7 +17,7 @@ public class MoodAnalyser {
 	}
 
 	// This method gives SAD or HAPPY mood
-	public String analyseMood() {
+	public String analyseMood() throws MoodAnalysisException {
 		try {
 			if (message.contains("sad")) {
 				return "SAD";
@@ -26,7 +26,7 @@ public class MoodAnalyser {
 			}
 		}
 		catch(NullPointerException e) {
-			return "HAPPY";
+			throw new MoodAnalysisException("Please enter proper valid mood");
 		}
 	}
 
