@@ -13,7 +13,7 @@ public class MoodAnalyserTest
      * Rigorous Test :-)
      */
     @Test
-    public void testMoodAnalysis()throws Exception 
+    public void givenSadReturnSad()throws Exception 
     {
     	MoodAnalyser  moodAnalyser = new MoodAnalyser("This is a sad message");
     	String mood = moodAnalyser.analyseMood();
@@ -21,15 +21,22 @@ public class MoodAnalyserTest
     }
     
     @Test
-    public void happyMood() throws Exception {
+    public void givenHappyReturnHappy() throws Exception {
     	MoodAnalyser  moodAnalyser = new MoodAnalyser("This is a happy message ");
     	String mood = moodAnalyser.analyseMood();
     	Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
 	}
     
     @Test
-    public void anyMood() throws Exception {
+    public void givenAnyMoodreturnHappy() throws Exception {
     	MoodAnalyser  moodAnalyser = new MoodAnalyser("I am in any mood ");
+    	String mood = moodAnalyser.analyseMood();
+    	Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
+	}
+    
+    @Test
+    public void givenNullThrowExceptionReturnHappy() throws Exception {
+    	MoodAnalyser  moodAnalyser = new MoodAnalyser(" ");
     	String mood = moodAnalyser.analyseMood();
     	Assert.assertThat(mood, CoreMatchers.is("HAPPY"));
 	}
